@@ -1,21 +1,29 @@
-    function calcular() {
-        // Obtém o valor do plano escolhido
-        const plano = parseFloat(document.getElementById('plan').value);
-        // Obtém a quantidade de meses restantes
-        const meses = parseInt(document.getElementById('months').value);
-        // Calcula o valor total multiplicando o valor do plano pelos meses
-        const total = plano * meses;
-        // Exibe o resultado
-        document.getElementById('result').innerText = `Valor total: R$${total.toFixed(2)}`;
-    }
+// ----------------------------------card multa contratual---------------------------------------
+function calcular() {
+    const plano = parseFloat(document.getElementById('plan').value);
+    const meses = parseInt(document.getElementById('months').value);
+    const total = plano * meses;
+    document.getElementById('result').innerText = `Valor total: R$${total.toFixed(2)}`;
+}
 
-    function calcularProporcional() {
-        // Obtém o valor do plano escolhido
-        const plano = parseFloat(document.getElementById('plan-proporcional').value);
-        // Obtém a quantidade de dias restantes
-        const dias = parseInt(document.getElementById('days').value);
-        // Calcula o valor proporcional multiplicando o valor do plano pelos dias
-        const totalProporcional = (plano / 30) * dias; // Considerando que o valor do plano é mensal
-        // Exibe o resultado
-        document.getElementById('result-proporcional').innerText = `Valor proporcional: R$${totalProporcional.toFixed(2)}`;
-    }
+// ----------------------------------card proporcional----------------------------------------
+function calcularProporcional() {
+    const plano = parseFloat(document.getElementById('plan-proporcional').value);
+    const dias = parseInt(document.getElementById('days').value);
+    const mes = parseInt(document.getElementById('month').value);
+    const diasNoMes = new Date(new Date().getFullYear(), mes, 0).getDate();
+    const totalProporcional = (plano / diasNoMes) * dias;
+    document.getElementById('result-proporcional').innerText = `Valor proporcional: R$${totalProporcional.toFixed(2)}`;
+}
+
+ // Função para definir o mês atual automaticamente
+ function setCurrentMonth() {
+    const currentMonth = new Date().getMonth() + 1; // Obtém o mês atual (0-11) e adiciona 1 para obter o mês correto (1-12)
+    document.getElementById('month').value = currentMonth;
+}
+
+// Chama a função quando a página é carregada
+window.onload = setCurrentMonth;
+
+
+// essa aqui 
