@@ -25,11 +25,11 @@
         <div class="modal-dialog custom-modal">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="infoModalLabel">Informações dos calculos</h5>
+                    <h5 class="modal-title" id="infoModalLabel">Informações dos cálculos</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>MULTA CONTRATUAL = (Valor Total do Beneficio / Meses de Fidelidade) x Meses Restantes do Contrato.</p>
+                    <p>MULTA CONTRATUAL = (Valor Total do Benefício / Meses de Fidelidade) x Meses Restantes do Contrato.</p>
                     <p>Exemplo com o plano de 400 megas R$99,90 Reais</p>
                     <p>EX: (720 / 12) = 60 🔜 60 x 5 = 300 valor da Multa Contratual</p>
                     <p>Neste exemplo o cliente tem 5 meses RESTANTES, resultando o valor da multa R$ 300 Reais. </p>
@@ -37,11 +37,19 @@
                     <p>PROPORCIONAL = (Valor do plano com fidelidade / quantidade de dias do mês) x quantidade de utilização do cliente.</p>
                     <p>Exemplo com o plano de 400 mega R$ 99,90 Reais</p>
                     <p>EX: (99,90 / 31) = 3,22258064516129 🔜 3,22258064516129 x 15 = 41.13 Valor do proporcional</p>
-                    <p>Neste exemplo o funcionario dividio o valor do plano de 400 megas, R$99,90 pela quatidade de dias do mês Julho/2024(31 dias) resultando no valor de R$ 41,13 Reais.</p>
+                    <p>Neste exemplo o funcionário dividiu o valor do plano de 400 megas, R$99,90 pela quantidade de dias do mês Julho/2024 (31 dias) resultando no valor de R$ 41,13 Reais.</p>
+                    <p>------------------------------------------------------------------------</p>
+                    <p>PLANOS - VALOR SEM DESCONTO - VALOR COM DESCONTO</p>
+                    <p>150MEGA -    R$ 98  REAIS   -  R$68,00 REAIS</p>
+                    <p>200MEGA -    R$ 139,90  REAIS   -  R$ 85,00 REAIS</p>
+                    <p>400MEGA -    R$ 159,90  REAIS   -  R$ 99,90 REAIS</p>
+                    <p>400MEGA -    R$ 159,90  REAIS   -  R$ 109,90 REAIS</p>
+                    <p>500MEGA -    R$ 179,90  REAIS   -  R$ 119,90 REAIS</p>
+                    <p>600MEGA -    R$ 189,90  REAIS   -  R$ 129,90 REAIS</p>
+                   
                     <p>*</p>
                     <p>******** "Se você não sabe fazer o Certo, Não faça o Errado" ****</p>
-                    <h3 >**************** Nilson Durans ******</h3>
-                    
+                    <h3>**************** Nilson Durans ******</h3>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
@@ -50,26 +58,26 @@
         </div>
     </div>
 
-    <div class="container ">
-        <div class="cards ">
-            <div class="card ">
+    <div class="container">
+        <div class="cards">
+            <div class="card">
                 <h2 class="mb-3">Multa Contratual</h2>
                 <div class="form-group">
                     <label for="plan">Escolha um Plano</label>
                     <select id="plan">
-                        <option value="30.00">150 MEGA</option>
-                        <option value="54.90">200 MEGA</option>
-                        <option value="50.00">400 MEGA - 109,90</option>
-                        <option value="60.00">400 MEGA - 99,90</option>
-                        <option value="60.00">500 MEGA</option>
-                        <option value="60.00">600 MEGA</option>
+                        <option value="30.00">150M - 98,00 POR 68,00</option>
+                        <option value="54.90">200M - 139,90 POR 85,00</option>
+                        <option value="50.00">400M - 159,90 POR 109,90</option>
+                        <option value="60.00">400M - 159,90 POR 99,90</option>
+                        <option value="60.00">500M - 179,90 POR 119,90</option>
+                        <option value="60.00">600M - 189,90 POR 129,90</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="months"><i class="fa-solid fa-calendar-days"></i>              Meses Restantes</label>
-                    <input type="number" id="months" min="1" value="1">
+                    <label for="months"><i class="fa-solid fa-calendar-days"></i> Meses Restantes</label>
+                    <input type="number" id="months" min="1" max="12" value="1">
                 </div>
-                <button onclick="calcular()"><i class="fa-solid fa-calculator"></i>          CALCULAR</button>
+                <button onclick="calcular()"><i class="fa-solid fa-calculator"></i> CALCULAR</button>
                 <div class="result" id="result"></div>
             </div>
 
@@ -78,16 +86,16 @@
                 <div class="form-group">
                     <label for="plan-proporcional">Escolha um Plano</label>
                     <select id="plan-proporcional">
-                        <option value="68.00">150 MEGA</option>
-                        <option value="85.00">200 MEGA</option>
-                        <option value="109.90">400 MEGA - 109,90</option>
-                        <option value="99.90">400 MEGA - 99,90</option>
-                        <option value="119.90">500 MEGA</option>
-                        <option value="139.90">600 MEGA</option>
+                        <option value="68.00">150M - 98,00 POR 68,00</option>
+                        <option value="85.00">200M - 139,90 POR 85,00</option>
+                        <option value="109.90">400M - 159,90 POR 109,90</option>
+                        <option value="99.90">400M - 159,90 POR 99,90</option>
+                        <option value="119.90">500M - 179,90 POR 119,90</option>
+                        <option value="139.90">600M - 189,90 POR 129,90</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="month"><i class="fa-solid fa-calendar-days"></i>        Mês a ser Calculado </label>
+                    <label for="month"><i class="fa-solid fa-calendar-days"></i> Mês a ser Calculado</label>
                     <select id="month">
                         <option value="1">JANEIRO</option>
                         <option value="2">FEVEREIRO</option>
@@ -104,36 +112,32 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="days"><i class="fa-solid fa-calendar-day"></i>           Dias de Utilização</label>
-                    <input type="number" id="days" min="1" value="1">
+                    <label for="days"><i class="fa-solid fa-calendar-day"></i> Dias de Utilização</label>
+                    <input type="number" id="days" min="1" max="31" value="1">
                 </div>
-                <button onclick="calcularProporcional()"><i class="fa-solid fa-calculator"></i>             CALCULAR</button>
+                <button onclick="calcularProporcional()"><i class="fa-solid fa-calculator"></i> CALCULAR</button>
                 <div class="result" id="result-proporcional"></div>
             </div>
         </div>
     </div>
 
     <footer class="footer"> 
-    <div class="container">
-        <div class="row">       
-            <div class="col-md-6 footer-border">
-                <p class="text-white">© 2024 Luan Vinicius. Todos os Direitos Reservados.</p>
-            </div>
-            <div class="col-md-6 social-icons"> 
-                <!-- Ícones de redes sociais -->
-                <a href="https://api.whatsapp.com/send/?phone=98999707891&text&type=phone_number&app_absent=0" target="_blank"><i class="fab fa-whatsapp col-md-6 pr-3">DESENVOLVEDOR</i></a>
+        <div class="container">
+            <div class="row">       
+                <div class="col-md-6 footer-border">
+                    <p class="text-white">© 2024 Luan Vinicius. Todos os Direitos Reservados.</p>
+                </div>
+                <div class="col-md-6 social-icons"> 
+                    <a href="https://api.whatsapp.com/send/?phone=98999707891&text&type=phone_number&app_absent=0" target="_blank"><i class="fab fa-whatsapp col-md-6 pr-3">DESENVOLVEDOR</i></a>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-
+    </footer>
 
     <script src="Java/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/da0e349cce.js" crossorigin="anonymous"></script>
 
+  
 </body>
 </html>
-
-
-<!-- atualizado -->
