@@ -8,8 +8,6 @@ body {
     background-repeat: no-repeat;
 }
 
-
-/* -------------------------------------Icon de informações ----------------------------------- */
 .info-icon-container {
     position: absolute;
     top: 50px;
@@ -27,41 +25,46 @@ body {
 }
 
 .custom-modal {
-    max-width: 100%; /* ou a largura que você preferir */
+    max-width: 100%;
 }
 
+/* Adicione estas regras ao seu arquivo CSS */
 
-/* ---------------------------------------Cards----------------------------------------------- */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
-    border-radius: 8px;
-    height: 600px;
-}
-
-
-h1 {
-    margin-bottom: 20px;
+    min-height: 100vh;
+    padding: 100px;
 }
 
 .cards {
     display: flex;
+    flex-wrap: nowrap; /* Impede que os cards quebrem para a próxima linha */
     gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1400px; /* Ajuste conforme necessário */
+    margin: 0 auto;
+    text-align: center;
 }
 
 .card {
+    flex: 1; /* Faz os cards crescerem igualmente */
+    min-width: 350px; /* Largura mínima para cada card */
     background-color: #e6f7ff;
-    padding: 20px;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 350px;
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 3px solid transparent;
 }
+
+.dif-proporcional-card {
+    flex: 1.5; /* Dá um pouco mais de espaço para o card maior */
+    min-width: 400px;
+}
+
+/* Mantenha o restante do seu CSS existente */
 
 .card:hover {
     transform: translateY(-10px);
@@ -84,8 +87,8 @@ input, select {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Ensure padding is included in the total width */
-    text-align: center; /* Center the text inside the input field */
+    box-sizing: border-box;
+    text-align: center;
 }
 
 button {
@@ -108,9 +111,40 @@ button:hover {
     font-weight: bold;
 }
 
+.periodos-container {
+    display: flex;
+    gap: 20px;
+}
 
+.periodo-container {
+    flex: 1;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f0f8ff;
+    border-radius: 5px;
+}
 
-/* -------------------------------------footer-------------------------------------------*/
+.periodo-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.date-picker-group {
+    display: flex;
+    gap: 10px;
+}
+
+.date-picker {
+    flex: 1;
+}
+
+.total-result {
+    font-size: 20px;
+    font-weight: bold;
+    color: #006400;
+    margin-top: 15px;
+}
+
 .footer {
     position: relative;
     padding: 10px 0;
@@ -142,17 +176,16 @@ button:hover {
     float: right;
 }
 
-
 .footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    height: 60px; /* Altura reduzida do footer */
-    padding: 5px 0; /* Padding interno reduzido */
+    height: 60px;
+    padding: 5px 0;
     background: linear-gradient(135deg, #6f42c1, #007bff, #6f42c1);
     background-size: 600% 600%;
     animation: gradient 10s ease infinite;
-    text-align: center; /* Centraliza o texto */
+    text-align: center;
 }
 
 .footer .container {
@@ -161,7 +194,6 @@ button:hover {
     align-items: center;
     padding: 0 15px;
 }
-
 
 .social-icons a {
     color: #e5e9ed;
@@ -181,8 +213,6 @@ button:hover {
     }
 }
 
-/* ----------------------------------------barra de cima do site------------------------------ */
-
 .top-bar {
     background: linear-gradient(135deg, #6f42c1, #007bff, #6f42c1);
     background-size: 600% 600%;
@@ -191,14 +221,10 @@ button:hover {
     padding: 5px 0;
     text-align: center;
     font-size: 14px;
-    height: 25px; /* Altura reduzida da barra superior */
+    height: 25px;
 }
 
 .top-bar .container {
     max-width: 1200px;
     margin: 0 auto;
 }
-
-
-
-
